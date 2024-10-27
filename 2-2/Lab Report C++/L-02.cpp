@@ -8,16 +8,9 @@ int factorial (int n){
 }
 
 //function for print fibonacci series
-void printFibonacciSeries(int n){
-    int first = 0, second = 1;
-    cout << "Fibonacci Series is: ";
-    for(int i = 0; i < n; i++){
-        cout << first << ' ';
-        int temp = first;
-        first = second;
-        second = temp + second;
-    }
-    cout << endl;
+int fibonacciSeries(int n){
+    if(n <= 1) return n;
+    return fibonacciSeries(n - 1) + fibonacciSeries(n - 2);
 }
 
 //function of simple calculator
@@ -60,7 +53,20 @@ void simpleCalculator(){
 }
 
 //print n prime number
-void printPrimeNumber(int n);
+void printPrimeNumber(int n){
+    for(int i = 1; i <= n; i += 2){
+        bool flag = false;
+        for(int j = 2; j < i; j++){
+            if(i % j == 0){
+                flag = true;
+            }
+        }
+        if(flag){
+            cout << i << ' ';
+        }
+    }
+    cout << endl;
+}
 
 //sum of digit function
 int sumOfDigit(int n){
@@ -86,7 +92,15 @@ int main()
 
     //print the fibonacci series
 
-    printFibonacciSeries(n);
+    int fibonacci; 
+    cout << "How many fibonacci number you want to print: ";
+    cin >> fibonacci;
+    int cn = 0;
+    while(cn < fibonacci){
+        cout << fibonacciSeries(cn) << ' ';
+        cn++;
+    }
+    cout << endl;
 
     //call simple calculator function to execute
 
@@ -95,10 +109,10 @@ int main()
     //call pintPrime() function to print first n prime number
 
     // printPrimeNumber(10);
-
+    printPrimeNumber(10);
     //call sumOfDigit() function
 
-    cout << "Digit sum of your enter number is:" << sumOfDigit(1234) << endl;
+    cout << "Digit sum of your enter number is: " << sumOfDigit(1234) << endl;
 
     return 0;
 
