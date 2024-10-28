@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define N 5
-int arr[N];
+int arr[N + 1];
 
 int mx = INT_MIN, mn = INT_MAX;
 
@@ -31,11 +31,11 @@ int main()
 {
 
     cout << "Enter the elements of the array: ";
-    for(int i = 0; i < N; i++){
+    for(int i = 1; i <= N; i++){
         cin >> arr[i];
     }
 
-    maxMin(0, N - 1, mx, mn);
+    maxMin(1, N, mx, mn);
 
     cout << mx << ' ' << mn << endl;
 }
