@@ -22,6 +22,8 @@ void shrotPath(int n, vector<vector<int>> cost, int v) {
     }
     S[v] = true;
     dist[v] = 0;
+
+
     for (int i = 1; i <= n; i++) {
         int u = minIndex(n, dist, S);
         S[u] = true;
@@ -32,6 +34,8 @@ void shrotPath(int n, vector<vector<int>> cost, int v) {
             }
         }
     }
+
+    
     cout << "node | prev | dist \n";
     for (int i = 1; i <= n; i++) {
         if(dist[i] < INT_MAX) cout << setw(5) << i << "|" << setw(5) << path[i]  << " |"<< setw(5) << dist[i] << endl;
