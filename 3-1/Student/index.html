@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Info Form</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"/>
+</head>
+<body>
+    <h2>Student Information</h2>
+    <form action="insert.php" method="post">
+        <label for="roll">Roll Number:</label>
+        <input type="text" name="roll" id="roll" required><br><br>
+
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required><br><br>
+
+        <label for="phone">Phone:</label>
+        <input type="text" name="phone" id="phone" required><br><br>
+
+        <label for="department">Department:</label>
+        <input type="text" name="department" id="department" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>Search Student</h2>
+    <form action="search.php" method="get">
+        <label for="search_roll">Enter Roll Number:</label>
+        <input type="text" name="search_roll" id="search_roll" required>
+        <input type="submit" value="Search">
+    </form>
+
+    <form action="show_students.php">
+        <button>Show All Student</button>
+    </form>
+</body>
+</html>
