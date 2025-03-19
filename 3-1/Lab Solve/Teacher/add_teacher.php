@@ -1,5 +1,5 @@
 <?php
-include "../config.php";
+include "config.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
@@ -8,11 +8,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = $_POST["phone"];
     $photo = "default.jpg";
 
+    //file upload code 
+    
+
     if (!empty($_FILES["photo"]["name"])) {
         $photo = time() . "_" . basename($_FILES["photo"]["name"]);
         move_uploaded_file($_FILES["photo"]["tmp_name"], "uploads/" . $photo);
     }
 
+    //sql statement
+    
     $stmt = $conn->prepare("INSERT INTO teachers (name, department, email, phone, photo) VALUES (?, ?, ?, ?, ?)");
     $stmt->bind_param("sssss", $name, $department, $email, $phone, $photo);
 

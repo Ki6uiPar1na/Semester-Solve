@@ -38,13 +38,12 @@ $result = $conn->query($sql);
                         <td>
                             <form action='delete.php' method='post' style='display:inline;'>
                                 <input type='hidden' name='roll' value='" . $row["roll"] . "'>
-                                <input type='submit' style='background-color: red; value='Delete' onclick='return confirm(\"Are you sure?\")'>
+                                <input type='submit' value='Delete' style='background-color: red; color: white;' onclick='return confirm(\"Are you sure?\")'>
                             </form>
-                            <form action='update.php' method='get' style='display:inline; background-color: red;'>
+                            <form action='update.php' method='get' style='display:inline;'>
                                 <input type='hidden' name='roll' value='" . $row["roll"] . "'>
-                                <input type='submit' style='background-color: green;  value='Update'>
+                                <input type='submit' value='Update' style='background-color: green; color: white;'>
                             </form>
-
                         </td>
                       </tr>";
             }

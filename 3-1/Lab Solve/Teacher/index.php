@@ -1,5 +1,5 @@
 <?php
-include "../config.php";
+include "config.php";
 
 // Fetch all teachers from the database
 $sql = "SELECT * FROM teachers";
